@@ -1,0 +1,41 @@
+﻿@using Szkola.Models.ViewModels
+@model List<TeacherViewModel>
+
+<h1>Teacher List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Employment Type</th>
+            <th>Date of Employment</th>
+            <th>Classes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.EmploymentType</td>
+                <td>@item.DateOfEmployment</td>
+                <td>
+                    @foreach (var className in item.Classes)
+                    {
+                        <p>@className</p>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New</a>

@@ -1,0 +1,30 @@
+﻿@using Szkola.Models
+@model Student
+
+<h1>Edit Student</h1>
+
+<form asp-action="Edit" asp-controller="StudentView" asp-route-id="@Model.Id" method="post">
+    <div class="form-group">
+        <label for="FirstName">First Name:</label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Last Name:</label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="DateOfBirth">Date of Birth:</label>
+        <input asp-for="DateOfBirth" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="LastGradePointAverage">Last Grade Point Average:</label>
+        <input asp-for="LastGradePointAverage" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="IdClass">Class ID:</label>
+        <input asp-for="IdClass" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<a asp-action="Index">Cancel</a>

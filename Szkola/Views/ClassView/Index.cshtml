@@ -1,0 +1,30 @@
+﻿@using Szkola.Models.ViewModels
+@model List<ClassViewModel>
+
+<h1>Class List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var schoolClass in Model)
+        {
+            <tr>
+                <td>@schoolClass.Id</td>
+                <td>@schoolClass.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@schoolClass.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@schoolClass.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@schoolClass.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New</a>

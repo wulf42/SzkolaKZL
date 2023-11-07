@@ -1,0 +1,27 @@
+﻿@using Szkola.Models.ViewModels;
+@model TeacherViewModel
+
+<h1>Teacher Details</h1>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>First Name</dt>
+        <dd>@Model.FirstName</dd>
+        <dt>Last Name</dt>
+        <dd>@Model.LastName</dd>
+        <dt>Employment Type</dt>
+        <dd>@Model.EmploymentType</dd>
+        <dt>Date of Employment</dt>
+        <dd>@Model.DateOfEmployment</dd>
+        <dt>Classes</dt>
+        <dd>
+            @foreach (var className in Model.Classes)
+            {
+                <p>@className</p>
+            }
+        </dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id">Edytuj</a> |
+<a asp-action="Index">Back to List</a>

@@ -1,0 +1,22 @@
+﻿@using Szkola.Models.ViewModels;
+@model StudentViewModel
+
+<h1>Student Details</h1>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>First Name</dt>
+        <dd>@Model.FirstName</dd>
+        <dt>Last Name</dt>
+        <dd>@Model.LastName</dd>
+        <dt>Date of Birth</dt>
+        <dd>@Model.DateOfBirth</dd>
+        <dt>Last Grade Point Average</dt>
+        <dd>@Model.LastGradePointAverage</dd>
+        <dt>Class</dt>
+        <dd>@Model.Class</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id">Edytuj</a> |
+<a asp-action="Index">Back to List</a>
